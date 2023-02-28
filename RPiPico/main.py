@@ -2,19 +2,23 @@ from machine import UART, Pin
 import time
 
 def pulse(pin):
-    pin.off()
+    pin.toggle()
     time.sleep(0.1)
-    pin.on()
+    pin.toggle()
 
-# if your relay board needs a constant signal, connect it to pin 27
-# if your relay board needs a pulse to toggle, connect it to pin 26
-relay1 = Pin(27, Pin.OUT)
+# if your relay board needs a constant signal to remain switched, connect it to pin 28
+relay1 = Pin(28, Pin.OUT)
 relay1.off()
-relay2 = Pin(26, Pin.OUT)
-relay2.on()
+# if your relay board needs a pulse to toggle
+# connect it to pin 27 for always low or 26 for always high
+relay2 = Pin(27, Pin.OUT)
+relay2.off()
+relay3 = Pin(26, Pin.OUT)
+relay3.on()
 
-# optional manual toggle button. button momentarily connects pin 28 to V+
-button = Pin(28, Pin.IN, Pin.PULL_DOWN)
+# optional manual toggle button. button momentarily connects pin 22 to V+
+button = Pin(22, Pin.IN, Pin.PULL_DOWN)
+# you can also optionally put a button between RUN and GND to reset the pico and usually reset the relay too.
 
 uart = UART(0, baudrate=9600, tx=Pin(0), rx=Pin(1))
 
@@ -34,6 +38,7 @@ while True:
     if button.value():
         relay1.toggle()
         pulse(relay2)
+        pulse(relay3)
         time.sleep(0.5)
         print("Button toggle")
 
@@ -43,4 +48,5 @@ while True:
             uart.write("Toggling\r\n")
             relay1.toggle()
             pulse(relay2)
+            pulse(relay3)
             print("Bluetooth Toggle")
