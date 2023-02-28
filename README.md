@@ -20,7 +20,7 @@ Relay boards come in various configurations. Some want a constant signal to hold
 
 ![wiring diagram](img/wiring_layout.png)
 ### USB Power
-I tried to find/build various ways to turn 120vAC into 5vDC but the safest, easiest way is to get the smallest USB wall brick you can find (like what apple makes) and the smallest 2 prong socket (like something cut off the end of a string of holiday lights) and wire up a plug inside the gang box. Some setups are harder/impossible to get 120v power from witout making gthe lights be always on. Hope you don't have one of those setups.
+I tried to find/build various ways to turn 120vAC into 5vDC but the safest, easiest way is to get the smallest USB wall brick you can find (like what apple makes) and the smallest 2 prong socket (like something cut off the end of a string of holiday lights) and wire up a plug inside the gang box. Some setups are harder/impossible to get 120v power from witout making the lights be always on. Hope you don't have one of those setups.
 ### 2 Gang Box
 My 1 gang box didnt have enough room to cram all this inside so I had to replace it with a 2 gang box [like this](https://www.youtube.com/watch?v=1bre8JtsUXI). Other styles of old work box exist, you can find videos on how to install them if needed.
 #### Faceplate
