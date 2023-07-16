@@ -4,7 +4,7 @@ Bluetooth is perfect for this.
 
 The project consists of two parts: the actual hardware in the wall, and the somewhat optional custom app to control it with.
 
-This documentation is intended as an overview, not necessarily as a strict roadmap to be follwed exactly as I did it.
+This documentation is intended as an overview, not necessarily as a strict roadmap to be followed exactly as I did it.
 ## Hardware
 The hardware consists of a Raspberry PiPico with a bluetooth daughterboard (I used an HC-06) and a relay and a USB power source all embedded inside the electrical box where the switch is. This can get rather tight and in my case I had to replace the existing 1 gang box with a 2 gang box to make things fit. The switch itself had to be replaced with a 3-way switch and the relay (mounted right behind the switch) acts as the other switch in the set. If either is toggled, the lights change state.  
 ![diagram of 3 way switch](https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/3-way_switch_animated.gif/320px-3-way_switch_animated.gif)  
@@ -31,6 +31,6 @@ Try to get one that has minimal volume in back to leave room for the relay.
 For wires, I happened to find a couple feet of scrap Romex on the side of the road so I used some of the 14 gauge from that to wire the relay to my 3 way switch.  
 For connectors, do yourself a favor and get Wago lever nuts. Twist nuts and other garbage can work too.
 ## App
-To remotely toggle the relay you need an app that sends the charater '1' over bluetooth.  
+To remotely toggle the relay you need an app that sends the character '1' over bluetooth.  
 [Serial Bluetooth Terminal](https://play.google.com/store/apps/details?id=de.kai_morich.serial_bluetooth_terminal&hl=en_US&gl=US) is good enough to get started. You can set one of the buttons at the bottom to read [Toggle] and make it send a '1'.  
-Or you can use the app I slapped together in [AppInventor](http://ai2.appinventor.mit.edu).
+Or you can use the app I slapped together in [AppInventor](http://ai2.appinventor.mit.edu). The .aia file is in the AndroidApp folder.
